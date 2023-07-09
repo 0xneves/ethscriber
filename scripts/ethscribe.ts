@@ -1,4 +1,5 @@
 import { ethers } from "hardhat";
+import abi from "../artifacts/contracts/ETHScriberURI.sol/ETHScriberURI.json";
 
 // This script is used to ethscribe a metadata to the Ethscriber Contract
 async function inscribe() {
@@ -6,17 +7,17 @@ async function inscribe() {
 	const [signer] = await ethers.getSigners();
 
 	// Get the global contract address
-	const contractAddr = "CONTRACT_ADDRESS";
+	const contractAddr = "0xD15EBb0658DC90D30A4256Da8A891B6A89f7cc4D";
 
-	// Set the metadata to be inscribed
-	const metadata = "thescriptions.eth";
+	// Connect to contract
+	const ETHScriberURI = new ethers.Contract(contractAddr, abi.abi, signer);
+
+	// The contract holding the metadata information
+	const metaContract = "0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D";
+	const tokenId = 1;
 
 	// Send the transaction
-	const tx = await signer.sendTransaction({
-		to: contractAddr,
-		value: ethers.utils.parseEther("0"),
-		data: Buffer.from(metadata),
-	});
+	const tx = await ETHScriberURI.ethscribe(metaContract, tokenId);
 
 	// Wait for the transaction to be mined
 	await tx.wait();

@@ -6,7 +6,7 @@ async function deploy() {
 	const [signer] = await ethers.getSigners();
 
 	// Generate artifacts from the contract and prepare it for deployment
-	const Factory = await ethers.getContractFactory("Ethscriber", signer);
+	const Factory = await ethers.getContractFactory("ETHScriberURI", signer);
 
 	// Deploy the contract
 	const Contract = await Factory.deploy();
