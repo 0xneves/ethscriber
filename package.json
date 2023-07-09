@@ -27,6 +27,12 @@
 		"typescript": "^4.9.5"
 	},
 	"scripts": {
-		"test": "mocha --require ts-node/register test/**/*.ts"
+		"test": "mocha --require ts-node/register test/**/*.ts",
+		"deploy-test": "npx hardhat run scripts/deploy.ts --network mumbai",
+		"deploy-ethereum": "npx hardhat run scripts/deploy.ts --network ethereum",
+		"deploy-binance": "npx hardhat run scripts/deploy.ts --network binance",
+		"deploy-polygon": "npx hardhat run scripts/deploy.ts --network polygon",
+		"deploy-avalanche": "npx hardhat run scripts/deploy.ts --network avalanche",
+		"deploy-fantom": "npx hardhat run scripts/deploy.ts --network fantom"
 	}
 }

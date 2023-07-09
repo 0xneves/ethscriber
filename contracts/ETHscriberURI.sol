@@ -8,7 +8,7 @@ error NotEnoughETHProvided(uint256 value);
 
 interface ITokenURI {
     /**
-     * @dev Returns the token URI for a given token ID from the a.
+     * @dev Returns the token URI for a given token ID
      * @param tokenId The token ID to return the URI for
      */
     function tokenURI(uint256 tokenId) external view returns (string memory);
@@ -20,7 +20,7 @@ interface ITokenURI {
  * @notice This contract is just a study case of the development of the Ethscriptions
  * initiative. Use as you wish, but be aware that this is not a production ready contract.
  * Rather than that, it's a proof of concept that can be used as a base for further
- * developments. Any transactions will be considered
+ * developments. Any transactions will be considered donations
  */
 contract ETHScriberURI {
     // Global address of the Ethscriber contract

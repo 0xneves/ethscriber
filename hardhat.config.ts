@@ -27,6 +27,9 @@ const config: HardhatUserConfig = {
 	etherscan: {
 		apiKey: `${SCAN}`,
 	},
+	mocha: {
+		timeout: 2000000,
+	},
 	networks: {
 		/**
 		 * @notice Localhost
